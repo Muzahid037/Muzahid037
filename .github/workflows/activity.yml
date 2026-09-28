@@ -11,11 +11,18 @@ on:
 permissions:
   contents: write
 
+# Both workflows commit to main; run them one at a time so pushes never race.
+concurrency:
+  group: profile-readme-commit
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: main
 
       - name: Build list of recently pushed repos
         env:

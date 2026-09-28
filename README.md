@@ -74,6 +74,11 @@
 ## ⚡ Recently updated repositories
 
 <!--START_SECTION:activity-->
+- [**Muzahid037.github.io**](https://github.com/Muzahid037/Muzahid037.github.io) · `TypeScript` · _updated 2026-09-07_
+- [**Leetcode**](https://github.com/Muzahid037/Leetcode) · `C++` · _updated 2024-09-16_
+- [**ranga-store-fix**](https://github.com/Muzahid037/ranga-store-fix) · `HTML` · _updated 2022-05-26_
+- [**book-archive**](https://github.com/Muzahid037/book-archive) · `HTML` · _updated 2022-05-26_
+- [**mac-book-pro**](https://github.com/Muzahid037/mac-book-pro) · `HTML` · _updated 2022-05-26_
 <!--END_SECTION:activity-->
 
 ## 🐍 Contribution snake

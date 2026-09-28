@@ -1,4 +1,4 @@
-name: Update recent activity
+name: Update recently updated repositories
 
 on:
   schedule:
@@ -16,9 +16,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: jamesgeorge007/github-activity-readme@master
+
+      - name: Build list of recently pushed repos
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          MAX_LINES: 5
-          COMMIT_MSG: "Update recent activity"
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          gh api "users/$OWNER/repos?sort=pushed&per_page=20" --jq '
+            [.[] | select(.fork | not) | select(.name != env.OWNER)][:5][]
+            | "- [**\(.name)**](\(.html_url))"
+              + (if .language then " · `\(.language)`" else "" end)
+              + (if .description then " · \(.description)" else "" end)
+              + " · _updated \(.pushed_at[:10])_"' > activity.md
+          python3 - <<'PY'
+          import re
+          readme = open("README.md").read()
+          body = open("activity.md").read().strip()
+          readme = re.sub(r"(<!--START_SECTION:activity-->).*?(<!--END_SECTION:activity-->)",
+                          lambda m: f"{m.group(1)}\n{body}\n{m.group(2)}", readme, flags=re.S)
+          open("README.md", "w").write(readme)
+          PY
+          rm activity.md
+
+      - name: Commit if changed
+        run: |
+          git diff --quiet README.md && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Update recently updated repositories"
+          git push

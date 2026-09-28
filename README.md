@@ -71,7 +71,7 @@
   <img src="https://streak-stats.demolab.com?user=Muzahid037&theme=transparent&hide_border=true&ring=2EA043&fire=2EA043&currStreakLabel=2EA043&sideLabels=8b949e&dates=8b949e&currStreakNum=8b949e&sideNums=8b949e" alt="Contribution streak" />
 </p>
 
-## ⚡ Recent activity
+## ⚡ Recently updated repositories
 
 <!--START_SECTION:activity-->
 <!--END_SECTION:activity-->

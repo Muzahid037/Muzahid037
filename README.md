@@ -61,20 +61,11 @@
 ## 📊 GitHub stats
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile-summary-card-output/github_dark/0-profile-details.svg" />
-    <img src="./profile-summary-card-output/github/0-profile-details.svg" alt="Contribution profile" />
-  </picture>
+  <img src="./profile-summary-card-output/transparent/0-profile-details.svg" alt="Contribution profile" />
 </p>
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile-summary-card-output/github_dark/3-stats.svg" />
-    <img src="./profile-summary-card-output/github/3-stats.svg" alt="GitHub stats" />
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile-summary-card-output/github_dark/2-most-commit-language.svg" />
-    <img src="./profile-summary-card-output/github/2-most-commit-language.svg" alt="Most committed languages" />
-  </picture>
+  <img src="./profile-summary-card-output/transparent/3-stats.svg" alt="GitHub stats" />
+  <img src="./profile-summary-card-output/transparent/2-most-commit-language.svg" alt="Most committed languages" />
 </p>
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=Muzahid037&theme=transparent&hide_border=true&ring=2EA043&fire=2EA043&currStreakLabel=2EA043&sideLabels=8b949e&dates=8b949e&currStreakNum=8b949e&sideNums=8b949e" alt="Contribution streak" />
